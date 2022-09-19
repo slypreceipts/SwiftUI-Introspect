@@ -6,7 +6,7 @@ import UIKit
 
 /// Introspection UIViewController that is inserted alongside the target view controller.
 @available(iOS 13.0, tvOS 13.0, macOS 10.15.0, *)
-public class IntrospectionUIViewController: UIViewController {
+class IntrospectionUIViewController: UIViewController {
     required init() {
         super.init(nibName: nil, bundle: nil)
         view = IntrospectionUIView()
@@ -20,12 +20,12 @@ public class IntrospectionUIViewController: UIViewController {
 
 /// This is the same logic as IntrospectionView but for view controllers. Please see details above.
 @available(iOS 13.0, tvOS 13.0, macOS 10.15.0, *)
-public struct UIKitIntrospectionViewController<TargetViewControllerType: UIViewController>: UIViewControllerRepresentable {
+struct UIKitIntrospectionViewController<TargetViewControllerType: UIViewController>: UIViewControllerRepresentable {
     
     let selector: (IntrospectionUIViewController) -> TargetViewControllerType?
     let customize: (TargetViewControllerType) -> Void
     
-    public init(
+    init(
         selector: @escaping (UIViewController) -> TargetViewControllerType?,
         customize: @escaping (TargetViewControllerType) -> Void
     ) {
@@ -33,7 +33,7 @@ public struct UIKitIntrospectionViewController<TargetViewControllerType: UIViewC
         self.customize = customize
     }
     
-    public func makeUIViewController(
+    func makeUIViewController(
         context: UIViewControllerRepresentableContext<UIKitIntrospectionViewController>
     ) -> IntrospectionUIViewController {
         let viewController = IntrospectionUIViewController()
@@ -42,7 +42,7 @@ public struct UIKitIntrospectionViewController<TargetViewControllerType: UIViewC
         return viewController
     }
     
-    public func updateUIViewController(
+    func updateUIViewController(
         _ uiViewController: IntrospectionUIViewController,
         context: UIViewControllerRepresentableContext<UIKitIntrospectionViewController>
     ) {
