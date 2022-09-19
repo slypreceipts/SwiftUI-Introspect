@@ -1,3 +1,5 @@
+#if canImport(SwiftUI)
+
 #if canImport(UIKit)
 import SwiftUI
 import UIKit
@@ -52,4 +54,6 @@ public struct UIKitIntrospectionViewController<TargetViewControllerType: UIViewC
         }
     }
 }
+#endif
+
 #endif

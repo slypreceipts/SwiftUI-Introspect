@@ -1,3 +1,5 @@
+#if canImport(SwiftUI)
+
 #if canImport(UIKit)
 import UIKit
 import SwiftUI
@@ -70,4 +72,6 @@ public struct UIKitIntrospectionView<TargetViewType: UIView>: UIViewRepresentabl
         }
     }
 }
+#endif
+
 #endif

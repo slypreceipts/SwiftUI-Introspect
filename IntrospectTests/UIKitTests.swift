@@ -1,3 +1,5 @@
+#if canImport(SwiftUI)
+
 #if canImport(UIKit)
 import XCTest
 import SwiftUI
@@ -617,4 +619,6 @@ class UIKitTests: XCTestCase {
     }
     #endif
 }
+#endif
+
 #endif

@@ -1,3 +1,5 @@
+#if canImport(SwiftUI)
+
 import SwiftUI
 
 #if os(macOS)
@@ -345,3 +347,5 @@ private extension Array {
         return self[index]
     }
 }
+
+#endif
